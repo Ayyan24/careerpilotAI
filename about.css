@@ -1,0 +1,107 @@
+/* ================= ABOUT HERO ================= */
+
+.about-hero{
+  min-height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: var(--s7) var(--s3);
+}
+
+.about-hero .about-content{
+  max-width: 80rem;
+
+ 
+}
+
+.about-hero .about-content h1{
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  color: var(--blue);
+  text-shadow: var(--glow-blue);
+   animation: floatText 3s ease-in-out infinite;
+}
+
+.about-hero .about-content p{
+  margin-top: var(--s4);
+  color: var(--dim);
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* BUTTONS */
+.about-btns{
+  margin-top: var(--s5);
+
+  display: flex;
+  gap: var(--s4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================= SECTIONS ================= */
+
+.about-section{
+  padding: var(--s8) var(--s3);
+  text-align: center;
+}
+
+.about-section h2{
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--purple);
+  text-shadow: var(--glow-purple);
+  margin-bottom: var(--s4);
+}
+
+.about-section p{
+  max-width: 70rem;
+  margin: auto;
+
+  color: var(--dim);
+  font-size: 1.8rem;
+  line-height: 1.8;
+
+  margin-bottom: var(--s4);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes floatUp{
+  from{
+    opacity: 0;
+    transform: translateY(var(--s5));
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 48em){
+
+  .about-hero-content p{
+    font-size: 1.6rem;
+  }
+
+  .about-section p{
+    font-size: 1.6rem;
+  }
+
+}
+
+@media (max-width: 30em){
+
+  .about-hero{
+    padding: var(--s6) var(--s3);
+  }
+
+  .about-btns{
+    flex-direction: column;
+  }
+
+}

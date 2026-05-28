@@ -1,0 +1,150 @@
+/* =========================
+   AUTH SECTION (SIGNUP / LOGIN)
+========================= */
+
+.auth-section{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--s7) var(--s3);
+}
+
+/* CARD */
+.auth-card{
+  width: 100%;
+  max-width: 42rem;
+  background: var(--card);
+  border: 0.1rem solid var(--border);
+  border-radius: var(--r3);
+  padding: var(--s6) var(--s5);
+  box-shadow: var(--glow-blue);
+  backdrop-filter: blur(1rem);
+  animation: fadeUp 0.8s ease;
+  transition: var(--t);
+}
+
+.auth-card:hover{
+  box-shadow: var(--glow-purple);
+  transform: translateY(-0.5rem);
+}
+
+/* TITLE */
+.auth-card h2{
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  color: var(--blue);
+  text-shadow: var(--glow-blue);
+  text-align: center;
+}
+
+.auth-card p{
+  margin-top: var(--s2);
+  margin-bottom: var(--s5);
+  text-align: center;
+  color: var(--dim);
+  font-size: 1.4rem;
+}
+
+/* INPUT GROUP */
+.input-group{
+  position: relative;
+  margin-bottom: var(--s4);
+}
+
+/* INPUT */
+.input-group input{
+  width: 100%;
+  padding: var(--s3);
+  background: transparent;
+  border: 0.1rem solid var(--border);
+  border-radius: var(--r2);
+  outline: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  transition: var(--t);
+}
+
+/* FOCUS EFFECT */
+.input-group input:focus{
+  border-color: var(--blue);
+  box-shadow: var(--glow-blue);
+}
+
+/* LABEL */
+.input-group label{
+  position: absolute;
+  left: var(--s3);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: var(--dim);
+  pointer-events: none;
+  transition: var(--t);
+}
+
+/* FLOAT LABEL */
+.input-group input:focus + label,
+.input-group input:valid + label{
+  top: -1rem;
+  left: var(--s2);
+  font-size: 1.1rem;
+  color: var(--blue);
+  background: var(--bg);
+  padding: 0 var(--s1);
+}
+
+/* BUTTON FULL WIDTH */
+.full-btn{
+  width: 100%;
+  margin-top: var(--s3);
+}
+
+/* SWITCH TEXT */
+.switch-text{
+  margin-top: var(--s4);
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--dim);
+}
+
+.switch-text a{
+  color: var(--blue);
+  text-decoration: none;
+  transition: var(--t);
+}
+
+.switch-text a:hover{
+  text-shadow: var(--glow-blue);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE FIX
+========================= */
+
+/* MOBILE */
+@media (max-width: 30em){
+  .auth-card{
+    padding: var(--s5) var(--s3);
+  }
+}
+
+/* TABLET */
+@media (min-width: 48em) and (max-width: 64em){
+  .auth-card{
+    max-width: 50rem;
+  }
+}
