@@ -1,0 +1,129 @@
+/* =========================
+   LOGIN PAGE STYLES
+========================= */
+
+.login-section {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--s7) var(--s3);
+}
+
+/* LOGIN CARD */
+.login-card {
+  width: 100%;
+  max-width: 40rem;
+  background: rgba(17, 17, 26, 0.6);
+  border: 0.1rem solid var(--border);
+  border-radius: var(--r3);
+  padding: var(--s6);
+  backdrop-filter: blur(1.5rem);
+  box-shadow: 0 0 3rem rgba(0, 229, 255, 0.08);
+  text-align: center;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* TITLE */
+.login-card h1 {
+  font-size: 3rem;
+  color: var(--blue);
+  text-shadow: var(--glow-blue);
+  margin-bottom: var(--s2);
+}
+
+/* SUB TEXT */
+.login-card p {
+  color: var(--dim);
+  font-size: 1.4rem;
+  margin-bottom: var(--s5);
+}
+
+/* INPUT BOX */
+.input-box {
+  margin-bottom: var(--s3);
+}
+
+.input-box input {
+  width: 100%;
+  padding: var(--s3);
+  border-radius: var(--r1);
+  border: 0.1rem solid var(--border);
+  background: rgba(10, 10, 15, 0.6);
+  color: var(--text);
+  outline: none;
+  font-size: 1.4rem;
+  transition: var(--t);
+}
+
+.input-box input:focus {
+  border-color: var(--blue);
+  box-shadow: var(--glow-blue);
+}
+
+/* LOGIN OPTIONS */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--dim);
+  margin-bottom: var(--s4);
+}
+
+.login-options a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.login-options a:hover {
+  text-shadow: var(--glow-blue);
+}
+
+/* FULL BUTTON */
+.full-btn {
+  width: 100%;
+  margin-top: var(--s2);
+}
+
+/* SIGNUP SECTION */
+.signup-link {
+  margin-top: var(--s5);
+}
+
+.signup-link p {
+  font-size: 1.3rem;
+  color: var(--dim);
+  margin-bottom: var(--s2);
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE LOGIN
+========================= */
+
+@media (max-width: 30em) {
+  .login-card {
+    padding: var(--s5);
+  }
+
+  .login-card h1 {
+    font-size: 2.4rem;
+  }
+
+  .login-options {
+    flex-direction: column;
+    gap: var(--s2);
+  }
+}

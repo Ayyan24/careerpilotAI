@@ -1,0 +1,480 @@
+/* =========================
+   BASE SETUP
+========================= */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0a0a0f;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+/* =========================
+   DESIGN SYSTEM VARIABLES
+========================= */
+:root {
+
+  /* COLORS */
+  --bg: #0a0a0f;
+  --card: #11111a;
+  --text: #ffffff;
+  --dim: #b3b3b3;
+
+  --blue: #00e5ff;
+  --purple: #b300ff;
+
+  --border: rgba(0, 229, 255, 0.2);
+
+  /* SPACING SYSTEM */
+  --s1: 0.8rem;
+  --s2: 1rem;
+  --s3: 1.6rem;
+  --s4: 2.4rem;
+  --s5: 3.2rem;
+  --s6: 4.8rem;
+  --s7: 6.4rem;
+  --s8: 8rem;
+
+  /* RADIUS */
+  --r1: 0.8rem;
+  --r2: 1.2rem;
+  --r3: 2rem;
+
+  /* SHADOWS */
+  --glow-blue: 0 0 2rem var(--blue);
+  --glow-purple: 0 0 3rem var(--purple);
+
+  /* TRANSITIONS */
+  --t: all 0.5s ease;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(1rem);
+  border-bottom: 0.1rem solid var(--border);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--s3) var(--s6);
+  gap: var(--s3);
+}
+
+.logo {
+  font-size: 2.2rem;
+  color: var(--blue);
+  text-shadow: var(--glow-blue);
+  white-space: nowrap;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: var(--s4);
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: var(--t);
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn,
+.btn-primary {
+  padding: var(--s2) var(--s3);
+  border-radius: var(--r1);
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: var(--t);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn {
+  border: 0.1rem solid var(--blue);
+  color: var(--blue);
+}
+
+.btn:hover {
+  box-shadow: var(--glow-blue);
+  transform: translateY(-0.3rem);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  color: #000;
+  font-weight: 600;
+  box-shadow: var(--glow-blue);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: var(--glow-purple);
+}
+
+/* =========================
+   HERO SECTION 
+========================= */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--s7) var(--s3);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  color: var(--blue);
+  text-shadow: var(--glow-blue);
+  animation: floatText 3s infinite ease-in-out;
+}
+
+.hero p {
+  margin-top: var(--s3);
+  max-width: 60vw;
+  color: var(--dim);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1rem); }
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+  padding: var(--s7) var(--s3);
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: var(--s4);
+  color: var(--purple);
+  text-shadow: var(--glow-purple);
+}
+
+h3{
+    margin-top: var(--s4);
+    margin-bottom: var(--s4);
+    color: var(--text);
+}
+
+/* ABOUT SECTION */
+.about h3{
+    text-align: left;
+    margin-left: var(--s2);
+    margin-top: var(--s4);
+    margin-bottom: var(--s4);
+    color: var(--text);
+
+}
+
+.about ul{
+    text-align: left;
+    margin-left: var(--s4);
+}
+
+.glow-list {
+  list-style: none; 
+}
+
+.glow-list li::before {
+  content: "• "; 
+  color: var(--blue); 
+  font-size: 1.5rem;
+  text-shadow: 0 0 8px var(--blue), 0 0 20px var(--blue);
+  margin-right: 0.8rem;
+}
+
+.glow-list li {
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   CARDS 
+========================= */
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: var(--s4);
+  margin-top: var(--s5);
+}
+
+.service-box {
+  background: var(--card);
+  padding: var(--s4);
+  border-radius: var(--r2);
+  border: 0.1rem solid var(--border);
+  transition: var(--t);
+}
+
+.service-box:hover {
+  transform: translateY(-1rem) scale(1.03);
+  box-shadow: var(--glow-blue), var(--glow-purple);
+}
+
+/* =========================
+   CHAT SECTION
+========================= */
+.chat-section {
+  padding: var(--s7) var(--s3);
+  background: linear-gradient(180deg, rgba(10, 10, 15, 0.95), rgba(10, 10, 15, 0.98));
+}
+
+.chat-card {
+  max-width: 80rem;
+  margin: 0 auto;
+  background: rgba(17, 17, 26, 0.9);
+  border: 0.1rem solid var(--border);
+  border-radius: var(--r3);
+  padding: var(--s5);
+  box-shadow: 0 0 2rem rgba(0, 229, 255, 0.08);
+}
+
+.chat-header h2 {
+  font-size: clamp(2.4rem, 3vw, 3.4rem);
+  color: var(--blue);
+  text-shadow: var(--glow-blue);
+}
+
+.chat-header p {
+  margin-top: var(--s1);
+  color: var(--dim);
+  font-size: 1.6rem;
+}
+
+.chat-messages {
+  margin-top: var(--s4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  max-height: 40rem;
+  overflow-y: auto;
+  padding-right: var(--s1);
+}
+
+.chat-bubble {
+  max-width: 100%;
+  padding: var(--s3);
+  border-radius: var(--r2);
+  line-height: 1.6;
+  font-size: 1.5rem;
+  border: 0.1rem solid transparent;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--text);
+  border-color: rgba(0, 229, 255, 0.2);
+}
+
+.chat-bubble.ai {
+  align-self: flex-start;
+  background: rgba(179, 0, 255, 0.12);
+  color: var(--text);
+  border-color: rgba(179, 0, 255, 0.2);
+}
+
+.chat-bubble.error {
+  align-self: center;
+  background: rgba(255, 60, 80, 0.12);
+  color: #ffb3b3;
+  border-color: rgba(255, 60, 80, 0.25);
+}
+
+.chat-status {
+  margin-top: var(--s3);
+  color: var(--dim);
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.chat-form {
+  margin-top: var(--s4);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s2);
+}
+
+.chat-form input {
+  width: 100%;
+  padding: var(--s3);
+  border-radius: var(--r1);
+  border: 0.1rem solid var(--border);
+  background: #0d0d14;
+  color: var(--text);
+  outline: none;
+  font-size: 1.4rem;
+}
+
+.chat-form input:focus {
+  border-color: var(--blue);
+  box-shadow: var(--glow-blue);
+}
+
+.chat-form button {
+  white-space: nowrap;
+}
+
+@media (max-width: 48em) {
+  .chat-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {  
+  padding: var(--s6) var(--s3);
+  background: #05050a;
+  text-align: center;
+  border-top: 0.1rem solid var(--border);
+}
+
+.footer-list{
+    list-style: none;
+}
+
+.footer-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "links services contact";
+    margin: var(--s4) auto;
+}
+
+.footer-links {
+  grid-area: links;  
+}
+
+
+.footer-links a {
+  margin: 0 var(--s2);
+  color: var(--dim);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.footer-links a:hover {
+  color: var(--blue);
+  text-shadow: var(--glow-blue);
+}
+
+.footer-services{
+    grid-area: services;
+}
+
+.footer-contact{
+    grid-area: contact;
+}
+
+.footer-icons{
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* 📱 SMALL MOBILE (0 - 480px) */
+@media (max-width: 30em) {
+  .navbar {
+    flex-direction: column;
+    padding: var(--s3);
+  }
+
+  .hero p {
+    max-width: 90vw;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+}
+
+/* 📱 LARGE MOBILE (481px - 768px) */
+@media (min-width: 30em) and (max-width: 48em) {
+  .navbar {
+    flex-direction: column;
+    gap: var(--s3);
+  }
+
+  .hero p {
+    max-width: 80vw;
+  }
+}
+
+/* 📟 TABLET / IPAD (769px - 1024px) */
+@media (min-width: 48em) and (max-width: 64em) {
+  .navbar {
+    padding: var(--s4) var(--s5);
+  }
+
+  .hero p {
+    max-width: 70vw;
+  }
+}
+
+/* 💻 LAPTOP (1025px - 1280px) */
+@media (min-width: 64em) and (max-width: 80em) {
+  .hero p {
+    max-width: 60vw;
+  }
+}
+
+/* 🖥 LARGE MONITOR (1281px - 1600px) */
+@media (min-width: 80em) and (max-width: 100em) {
+  body {
+    font-size: 1.7rem;
+  }
+}
+
+/* 🖥 ULTRA WIDE (1600px+) */
+@media (min-width: 100em) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  .hero h1 {
+    font-size: 6rem;
+  }
+}
