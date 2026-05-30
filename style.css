@@ -433,11 +433,13 @@ footer {
     justify-content: center;
   }
 }
-.footer{
+.footer-content{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    align-content: flex-start;
+   margin: var(--s4) auto;
+}
 }
 
 /* 📱 LARGE MOBILE (481px - 768px) */
@@ -452,11 +454,13 @@ footer {
   }
 }
 
-.footer{
+.footer-content{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    align-content: flex-start;
+   margin: var(--s4) auto;
+}
 }
 
 /* 📟 TABLET / IPAD (769px - 1024px) */
