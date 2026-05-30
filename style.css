@@ -408,7 +408,12 @@ footer {
     grid-area: contact;
 }
 
-.footer-icons{
+.footer-icons i{
+  color: var(--text);
+
+}
+.footer-icons p{
+  margin: var(--s3);
 }
 
 /* =========================
