@@ -433,6 +433,12 @@ footer {
     justify-content: center;
   }
 }
+.footer{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-content: flex-start;
+}
 
 /* 📱 LARGE MOBILE (481px - 768px) */
 @media (min-width: 30em) and (max-width: 48em) {
@@ -444,6 +450,13 @@ footer {
   .hero p {
     max-width: 80vw;
   }
+}
+
+.footer{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-content: flex-start;
 }
 
 /* 📟 TABLET / IPAD (769px - 1024px) */
