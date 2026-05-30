@@ -366,6 +366,7 @@ h3{
    FOOTER
 ========================= */
 footer {  
+  width: 100vw;
   padding: var(--s6) var(--s3);
   background: #05050a;
   text-align: center;
@@ -411,9 +412,6 @@ footer {
 .footer-icons i{
   color: var(--text);
 
-}
-.footer-icons p{
-  margin: var(--s3);
 }
 
 /* =========================
